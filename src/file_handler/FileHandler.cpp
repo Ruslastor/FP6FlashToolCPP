@@ -5,7 +5,7 @@ const std::filesystem::path FileHandler::workspace_root = std::filesystem::path(
 
 std::filesystem::path FileHandler::get_workspace_root() const{return workspace_root;}
 
-bool FileHandler::saveTo(const std::string& path) const{
+bool FileHandler::save_to(const std::string& path) const{
     std::ofstream out(path);
     if (!out) return false;
     for (const auto& line : lines) {
@@ -23,6 +23,7 @@ bool FileHandler::copy_to_workspace(const std::string& source_path, std::filesys
         case FileType::HEX: subdir = "hex"; break;
         case FileType::PR6: subdir = "pr6"; break;
         case FileType::ES6: subdir = "es6"; break;
+        case FileType::FlashLog: subdir = "flash_logs"; break;
         case FileType::ModuleInfo: subdir = "modules"; break;
         default: subdir = "misc"; break;
     }

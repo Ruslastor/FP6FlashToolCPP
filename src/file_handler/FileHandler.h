@@ -10,7 +10,8 @@ enum class FileType {
     HEX,
     PR6,
     ES6,
-    ModuleInfo
+    ModuleInfo,
+    FlashLog
 };
 
 
@@ -22,7 +23,7 @@ class FileHandler {
 
         virtual FileType get_file_type() const = 0;
     
-        bool saveTo(const std::string& path) const;
+        bool save_to(const std::string& path) const;
 
         std::filesystem::path get_workspace_root() const;
     private:
