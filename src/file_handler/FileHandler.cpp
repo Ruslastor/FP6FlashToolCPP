@@ -41,4 +41,14 @@ bool FileHandler::copy_to_workspace(const std::string& source_path, std::filesys
         std::cerr << "[FileHandler] Copy error: " << e.what() << "\n";
         return false;
     }
+
+}
+
+std::string FileHandler::get_file_extention(const std::filesystem::path& path) {
+    auto ext = path.extension().string();
+    if (!ext.empty() && ext.front() == '.') {
+        ext.erase(0, 1);
+    }
+    for (auto& c : ext) c = static_cast<char>(tolower(c));
+    return ext;
 }

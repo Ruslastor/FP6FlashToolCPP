@@ -24,11 +24,12 @@ class FileHandler {
         virtual FileType get_file_type() const = 0;
     
         virtual std::string get_extention() const = 0;
-        
+
         bool save_to(const std::string& path) const;
 
         std::filesystem::path get_workspace_root() const;
 
+        static std::string FileHandler::get_file_extention(const std::filesystem::path& path);
 
     private:
         static const std::filesystem::path workspace_root;
