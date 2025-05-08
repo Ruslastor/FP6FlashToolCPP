@@ -9,4 +9,6 @@ class ES6File : public FileHandler{
 
         FileType get_file_type() const override {return FileType::ES6;}
 
+        std::string get_extention() const override {return ".exx6";}
+
 };

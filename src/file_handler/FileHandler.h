@@ -23,15 +23,17 @@ class FileHandler {
 
         virtual FileType get_file_type() const = 0;
     
+        virtual std::string get_extention() const = 0;
+        
         bool save_to(const std::string& path) const;
 
         std::filesystem::path get_workspace_root() const;
-    private:
-        std::vector<std::string> lines;
 
+
+    private:
         static const std::filesystem::path workspace_root;
 
-
     protected:
+        std::vector<std::string> lines;
         bool copy_to_workspace(const std::string& source_path, std::filesystem::path& copy_path) const;
     };
