@@ -3,6 +3,7 @@
 #include <iostream>
 #include <filesystem>
 #include <vector>
+#include <fstream>
 
 #define TOOL_WORKSPACE_ROOT "FlashTool"
 
@@ -29,7 +30,7 @@ class FileHandler {
 
         std::filesystem::path get_workspace_root() const;
 
-        static std::string FileHandler::get_file_extention(const std::filesystem::path& path);
+        static std::string get_file_extention(const std::filesystem::path& path);
 
     private:
         static const std::filesystem::path workspace_root;
